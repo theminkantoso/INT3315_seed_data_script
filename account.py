@@ -182,8 +182,10 @@ f = open("account.txt", "a", encoding="utf-8")
 # f.write("Now the file has more content!")
 # f.close()
 
+# print(str("{:.2f}".format(round(random.uniform(3.00, 3.00), 2))))
+
 f.write("INSERT INTO `account` VALUES ")
-for x in range(4, 1638): #1638
+for x in range(1, 1638): #1638
     truong = random.choice(school)
     nganh = truong[random.randint(1, len(truong)-1)]
     ten_truong = truong[0]
@@ -203,7 +205,7 @@ for x in range(4, 1638): #1638
     f.write('(' + str(x) + ','
           + "'" + random.choice(ho) + ' ' + random.choice(dem) + ' ' + random.choice(ten) + "',"
           + "'19020" + f"{x:03}" + "@vnu.edu.vn'," + "'$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',"
-          + str(round(random.uniform(2.00, 3.99), 2)) + ','
+          + str("{:.2f}".format(round(random.uniform(1.50, 3.99), 2))) + ','
           + "'" + ten_truong + "',"
           + "'" + nganh + "',"
           + 'NULL,'
@@ -213,7 +215,7 @@ for x in range(4, 1638): #1638
           + 'NULL),' + '\n'
           )
 
-# f.close()
+f.close()
 # INSERT INTO `account` VALUES (1,'pham','abc@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',3.21,'UET','IT','www.b.a.com','linkedin.com','01235',0,'link.com'),\
 #     (2,'tran','tran@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',2.42,'UED','Giaoduc','www.siu.com','linkedin.com/siu','0294085',0,'siu.com'),\
 #     (3,'le','abcd@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',4,'UEB','Kinthe','www.eco.com',NULL,NULL,0,NULL);
