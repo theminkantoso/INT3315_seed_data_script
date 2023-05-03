@@ -1,0 +1,1 @@
+# INSERT INTO `proteam`.`friend_follow` (`account_id`, `friend_id`, `status`) VALUES ('1', '4', '2');

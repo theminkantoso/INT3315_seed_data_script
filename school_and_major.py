@@ -1,15 +1,3 @@
-# INSERT INTO `account` VALUES (1,'pham','abc@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',3.21,'UET','IT','www.b.a.com','linkedin.com','01235',0,'link.com'),\
-#     (2,'tran','tran@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',2.42,'UED','Giaoduc','www.siu.com','linkedin.com/siu','0294085',0,'siu.com'),\
-#     (3,'le','abcd@gmail.com','$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',4,'UEB','Kinthe','www.eco.com',NULL,NULL,0,NULL);
-import random
-
-# f = open("demofile2.txt", "a")
-# f.write("Now the file has more content!")
-# f.close()
-
-ho = ['Tran', 'Ngo', 'Le', 'Ly', 'Phan', 'Vo', 'Dinh', 'Pham', 'Do', 'Nguyen', 'Truong', 'Trinh', 'Hoang', 'Chu', 'Duong', 'Vu', 'Dang']
-dem = ['Van', 'Thi', 'Bao', 'Minh', 'Mai', 'Dinh', 'Anh', 'Manh', 'Ma', 'Hoang', 'Le', 'Gia', 'Dang', 'Quoc', 'Binh', 'Nam']
-ten = ['Anh', 'An', 'Ba', 'Chau', 'Chi', 'Duc', 'Ha', 'Hanh', 'Khuong', 'Khang', 'Khanh', 'Loc', 'Nam', 'Ngan', 'Ngoc', 'Phuc', 'Phi', 'Quoc', 'Quy', 'Sy', 'Thanh', 'Tam', 'Viet', 'Yen']
 school = [['Truong Đai hoc Khoa hoc Tu nhien', 'Toan hoc',
 'Toan hoc (CTĐT tai nang)',
 'Toan hoc (CTĐT tien tien)',
@@ -178,43 +166,11 @@ school = [['Truong Đai hoc Khoa hoc Tu nhien', 'Toan hoc',
 'Quan ly giai tri va su kien',
 'Quan tri do thi thong minh va ben vung']]
 
-f = open("account2.txt", "a", encoding="utf-8")
-
+# f = open("school_and_major.txt", "a", encoding="utf-8")
 
 # f.write("INSERT INTO `account` VALUES ")
-# for x in range(1001, 10000): #1638
-#     truong = random.choice(school)
-#     nganh = truong[random.randint(1, len(truong)-1)]
-#     ten_truong = truong[0]
-#     f.write('(' + str(x) + ','
-#           + "'" + random.choice(ho) + ' ' + random.choice(dem) + ' ' + random.choice(ten) + "',"
-#           + "'19020" + f"{x:03}" + "@vnu.edu.vn'," + "'$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',"
-#           + str("{:.2f}".format(round(random.uniform(1.50, 3.99), 2))) + ','
-#           + "'" + ten_truong + "',"
-#           + "'" + nganh + "',"
-#           + 'NULL,'
-#           + random.choice([("'" + 'www.linkedin.com/' + "19020" + f"{x:03}" + "',"), ('NULL,')])
-#           + "'0" + str(random.randint(100000000, 999999999)) + "',"
-#           + '0,'
-#           + 'NULL),' + '\n'
-#           )
-
-
-for x in range(1639, 10000): #1638
-    truong = random.choice(school)
-    nganh = truong[random.randint(1, len(truong)-1)]
-    ten_truong = truong[0]
-    f.write("INSERT INTO `account` VALUES ")
-    f.write('(' + str(x) + ','
-          + "'" + random.choice(ho) + ' ' + random.choice(dem) + ' ' + random.choice(ten) + "',"
-          + "'19020" + f"{x:03}" + "@vnu.edu.vn'," + "'$2b$10$qH0hVjno/.SRCWBArUgfD.xkolTN9g0gPEGqSqJd0DrDLOxxqwn9W',"
-          + str("{:.2f}".format(round(random.uniform(1.50, 3.99), 2))) + ','
-          + "'" + ten_truong + "',"
-          + "'" + nganh + "',"
-          + 'NULL,'
-          + random.choice([("'" + 'www.linkedin.com/' + "19020" + f"{x:03}" + "',"), ('NULL,')])
-          + "'0" + str(random.randint(100000000, 999999999)) + "',"
-          + '0,'
-          + 'NULL);' + '\n'
-          )
-f.close()
+# INSERT INTO `proteam`.`major` (`major_name`, `school_id`) VALUES ('ff', '1');
+for x in range(len(school)):
+    # print(school[x][0])
+    for k in range(1, len(school[x])):
+        print("INSERT INTO `proteam`.`major` (`major_name`, `school_id`) VALUES " + "('" + school[x][k] + "','" + str(x+1) + "');")
